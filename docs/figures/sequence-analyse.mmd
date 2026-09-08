@@ -1,0 +1,24 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'14px','actorBkg':'#e8eef5','actorBorder':'#0f2942','actorTextColor':'#0f2942','signalColor':'#e85d04','signalTextColor':'#0f2942'}}}%%
+sequenceDiagram
+  autonumber
+  actor U as Utilisateur
+  participant UI as Interface Deep Bridge
+  participant L as Loader DICOM
+  participant V as Viewer
+  participant C as Module carotid
+  participant R as Export
+
+  U->>UI: Ouvre dossier / Demo
+  UI->>L: Charge les fichiers
+  L-->>UI: Series + slices
+  UI->>V: Affiche la coupe
+  U->>V: Regle WC/WW, navigue
+  U->>UI: Saisit diametres / mesure
+  UI->>C: Calcule NASCET/ECST
+  C-->>UI: % + grade
+  U->>UI: Lance pipeline
+  UI->>C: Analyse structuree
+  C-->>UI: Score + suggestion
+  U->>UI: Export rapport
+  UI->>R: JSON/TXT/CSV/PDF
+  R-->>U: Fichiers generes

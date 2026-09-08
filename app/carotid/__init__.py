@@ -1,0 +1,1 @@
+"""Carotid analysis modules (manual ROI + ML stubs)."""

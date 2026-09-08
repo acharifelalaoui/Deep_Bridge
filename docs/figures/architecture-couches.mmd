@@ -1,0 +1,24 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'15px','primaryColor':'#e8eef5','primaryTextColor':'#0f2942','primaryBorderColor':'#0f2942','lineColor':'#e85d04'}}}%%
+flowchart TB
+  subgraph Presentation["Couche presentation"]
+    UI[Interface PySide6]
+  end
+  subgraph Domaine["Couche domaine"]
+    DICOM[dicom]
+    IMG[imaging]
+    CAR[carotid]
+    ML[ml / risk]
+  end
+  subgraph Persistance["Sorties / donnees"]
+    DATA[(data DEMO + CSV)]
+    EXP[(exports rapports)]
+  end
+  UI --> DICOM
+  UI --> IMG
+  UI --> CAR
+  UI --> ML
+  DICOM --> DATA
+  ML --> DATA
+  UI --> EXP
+  CAR --> EXP
+  ML --> EXP

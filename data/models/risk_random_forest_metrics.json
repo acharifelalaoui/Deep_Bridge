@@ -1,0 +1,21 @@
+{
+  "n_samples": 651,
+  "n_train": 520,
+  "n_test": 131,
+  "accuracy": 0.6564885496183206,
+  "precision": 0.15384615384615385,
+  "recall": 0.3333333333333333,
+  "f1": 0.21052631578947367,
+  "roc_auc": 0.5164700098328416,
+  "features": [
+    "age_arrondi",
+    "sexe",
+    "s_plus",
+    "technique",
+    "shunt",
+    "arterio",
+    "re_inter",
+    "anomalie",
+    "anomalie_comm"
+  ]
+}

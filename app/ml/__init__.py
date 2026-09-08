@@ -1,0 +1,1 @@
+"""ML architecture stubs – no invented training results."""
